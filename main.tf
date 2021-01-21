@@ -2,7 +2,17 @@ provider "aws" {
   version = "~> 3.0"
   region  = var.region
 }
+/*
+terraform {
+  backend "remote" {
+    organization = "marc-training"
 
+    workspaces {
+      name = "hashicat-aws"
+    }
+  }
+}
+*/
 resource "aws_vpc" "hashicat" {
   cidr_block           = var.address_space
   enable_dns_hostnames = true
